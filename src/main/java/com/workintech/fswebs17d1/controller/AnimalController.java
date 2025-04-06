@@ -25,9 +25,8 @@ public class AnimalController {
     }
 
     @PostMapping
-    public Animal addAnimal(@RequestParam int id, @RequestParam String name) {
-        Animal animal = new Animal(id,name);
-        animals.put(id,animal);
+    public Animal addAnimal(@RequestBody Animal animal) {
+        animals.put(animal.getId(),animal);
         return animal;
     }
 
